@@ -67,9 +67,63 @@
         <joint name="r_wrist_flex_joint" value="0" />
         <joint name="r_wrist_roll_joint" value="0" />
     </group_state>
+    <group_state name="Right Hand Open" group="right_gripper">
+        <joint name="r_gripper_joint" value="0" />
+        <joint name="r_gripper_l_finger_joint" value="0.548" />
+        <joint name="r_gripper_l_finger_tip_joint" value="0.548" />
+        <joint name="r_gripper_motor_screw_joint" value="0" />
+        <joint name="r_gripper_motor_slider_joint" value="0" />
+        <joint name="r_gripper_r_finger_joint" value="0.548" />
+        <joint name="r_gripper_r_finger_tip_joint" value="0.548" />
+    </group_state>
+    <group_state name="Left Hand Open" group="left_gripper">
+        <joint name="l_gripper_joint" value="0" />
+        <joint name="l_gripper_l_finger_joint" value="0.548" />
+        <joint name="l_gripper_l_finger_tip_joint" value="0.548" />
+        <joint name="l_gripper_motor_screw_joint" value="0" />
+        <joint name="l_gripper_motor_slider_joint" value="0" />
+        <joint name="l_gripper_r_finger_joint" value="0.548" />
+        <joint name="l_gripper_r_finger_tip_joint" value="0.548" />
+    </group_state>
+    <group_state name="Right Hand Close" group="right_gripper">
+        <joint name="r_gripper_joint" value="0" />
+        <joint name="r_gripper_l_finger_joint" value="0.1755" />
+        <joint name="r_gripper_l_finger_tip_joint" value="0.1755" />
+        <joint name="r_gripper_motor_screw_joint" value="0" />
+        <joint name="r_gripper_motor_slider_joint" value="0" />
+        <joint name="r_gripper_r_finger_joint" value="0.1755" />
+        <joint name="r_gripper_r_finger_tip_joint" value="0.1755" />
+    </group_state>
+    <group_state name="Left Hand Close" group="left_gripper">
+        <joint name="l_gripper_joint" value="0" />
+        <joint name="l_gripper_l_finger_joint" value="0.1755" />
+        <joint name="l_gripper_l_finger_tip_joint" value="0.1755" />
+        <joint name="l_gripper_motor_screw_joint" value="0" />
+        <joint name="l_gripper_motor_slider_joint" value="0" />
+        <joint name="l_gripper_r_finger_joint" value="0.1755" />
+        <joint name="l_gripper_r_finger_tip_joint" value="0.1755" />
+    </group_state>
+    <group_state name="Left Hand Pre Grasp" group="left_gripper">
+        <joint name="l_gripper_joint" value="0" />
+        <joint name="l_gripper_l_finger_joint" value="0.548" />
+        <joint name="l_gripper_l_finger_tip_joint" value="0" />
+        <joint name="l_gripper_motor_screw_joint" value="0" />
+        <joint name="l_gripper_motor_slider_joint" value="0" />
+        <joint name="l_gripper_r_finger_joint" value="0.548" />
+        <joint name="l_gripper_r_finger_tip_joint" value="0" />
+    </group_state>
+    <group_state name="Right Hand Pre Grasp" group="right_gripper">
+        <joint name="r_gripper_joint" value="0" />
+        <joint name="r_gripper_l_finger_joint" value="0.548" />
+        <joint name="r_gripper_l_finger_tip_joint" value="0" />
+        <joint name="r_gripper_motor_screw_joint" value="0" />
+        <joint name="r_gripper_motor_slider_joint" value="0" />
+        <joint name="r_gripper_r_finger_joint" value="0.548" />
+        <joint name="r_gripper_r_finger_tip_joint" value="0" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="right_eef" parent_link="r_wrist_roll_link" group="right_gripper" />
-    <end_effector name="left_eef" parent_link="l_wrist_roll_link" group="left_gripper" />
+    <end_effector name="right_eef" parent_link="r_wrist_roll_link" group="right_gripper" parent_group="right_arm" />
+    <end_effector name="left_eef" parent_link="l_wrist_roll_link" group="left_gripper" parent_group="left_arm" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom_combined" child_link="base_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
